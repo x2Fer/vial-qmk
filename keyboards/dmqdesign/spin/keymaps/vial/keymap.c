@@ -129,7 +129,7 @@ bool oled_task_user(void) {
             // Or use the write_ln shortcut over adding '\n' to the end of your string
             oled_write_ln_P(PSTR("Undefined"), false);
     }
-    oled_write_P(PSTR("                 uwu\n"), false);
+    oled_write_P(PSTR("\n"), false);
     static char rgb_mode_name[30];
     rgblight_get_mode_name(rgblight_get_mode(), sizeof(rgb_mode_name), rgb_mode_name);
 
