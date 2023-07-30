@@ -19,26 +19,26 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT(/* Base */
                 KC_PGUP, KC_PSCR, KC_HOME, KC_MUTE,
                 KC_PGDN, KC_UP, KC_END, G(KC_L),
-                KC_LEFT, KC_DOWN, KC_RGHT, KC_TRNS,
+                KC_LEFT, KC_DOWN, KC_RGHT, A(KC_TAB),
                 KC_DEL, KC_ENT, TO(1)
                 ),
     [1] = LAYOUT(/* FKeys */
-                KC_F13, KC_F14, KC_F15, KC_TRNS,
-                KC_F16, KC_F17, KC_F18, KC_TRNS,
-                KC_F19, KC_F20, KC_F21, KC_TRNS,
+                KC_F13, KC_F14, KC_F15, KC_F24,
+                KC_F16, KC_F17, KC_F18, MEH(KC_F13),
+                KC_F19, KC_F20, KC_F21, MEH(KC_F14),
                 KC_F22, KC_F23, TO(2)
                 ), 
     [2] = LAYOUT(/* Numpad */
-                KC_7, KC_8, KC_9, KC_TRNS,
-                KC_4, KC_5, KC_6, KC_TRNS,
-                KC_1, KC_2, KC_3, KC_TRNS,
-                KC_0, RGB_TOG, TO(3)
+                KC_7, KC_8, KC_9, KC_BSPC,
+                KC_4, KC_5, KC_6, KC_DEL,
+                KC_1, KC_2, KC_3, KC_MINS,
+                KC_0, KC_ENT, TO(3)
                 ),
     [3] = LAYOUT(/* RGB */
                 RGB_M_P, RGB_M_B, RGB_M_R, RGB_TOG,
-                RGB_M_SW, RGB_M_SN, RGB_M_K, KC_TRNS,
-                RGB_M_X, RGB_M_G, RGB_M_T, KC_TRNS,
-                RGB_RMOD, RGB_MOD, TO(0)
+                RGB_M_SW, RGB_M_SN, RGB_M_K, RGB_SPI,
+                RGB_M_X, RGB_M_G, RGB_M_T, RGB_SPD,
+                RGB_M_TW, RGB_MOD, TO(0)
                 ),                          
 };
 
@@ -46,9 +46,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
     [0] =   { ENCODER_CCW_CW(KC_VOLD, KC_VOLU), ENCODER_CCW_CW(KC_BRIU, KC_BRID),  ENCODER_CCW_CW(KC_WH_D, KC_WH_U)  },
     //                  Encoder 1                                     Encoder 2
-    [1] =   { ENCODER_CCW_CW(KC_TRNS, KC_TRNS), ENCODER_CCW_CW(KC_TRNS, KC_TRNS),  ENCODER_CCW_CW(KC_TRNS, KC_TRNS)  },
+    [1] =   { ENCODER_CCW_CW(MEH(KC_WH_D), MEH(KC_WH_U)), ENCODER_CCW_CW(MEH(KC_WH_L), MEH(KC_WH_R)),  ENCODER_CCW_CW(MEH(KC_PGDN), MEH(KC_PGUP))  },
     //                  Encoder 1                                     Encoder 2
-    [2] =   { ENCODER_CCW_CW(KC_TRNS, KC_TRNS), ENCODER_CCW_CW(KC_TRNS, KC_TRNS),  ENCODER_CCW_CW(KC_TRNS, KC_TRNS)  },
+    [2] =   { ENCODER_CCW_CW(KC_LEFT, KC_RIGHT), ENCODER_CCW_CW(KC_DOWN, KC_UP),  ENCODER_CCW_CW(KC_WH_L, KC_WH_R)  },
     //                  Encoder 1                                     Encoder 2
     [3] =   { ENCODER_CCW_CW(RGB_VAD, RGB_VAI), ENCODER_CCW_CW(RGB_SAD, RGB_SAI),  ENCODER_CCW_CW(RGB_HUD, RGB_HUI)  },
     //                  Encoder 1                                     Encoder 2
